@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sagar P Gowda – Data & AI Engineer</title>
+  <meta name="description" content="Data & AI Engineer with 5+ years of experience building lakehouse platforms and agentic systems on Databricks and Azure.">
+  <meta property="og:title" content="Sagar P Gowda – Data & AI Engineer">
+  <meta property="og:description" content="Lakehouse platforms, MCP tools, LangGraph agents and RAG on Databricks and Azure.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="static/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0f1c;
+      --panel: #0f1626;
+      --ink: #e8edf6;
+      --muted: #93a0b8;
+      --line: #1f2a44;
+      --accent: #4fd1e0;
+      --serif: 'Newsreader', Georgia, serif;
+      --sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
+    ul, ol { list-style: none; }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 80px;
+    }
+
+    /* identity column */
+    aside { position: sticky; top: 64px; align-self: start; }
+
+    .photo {
+      width: 112px;
+      height: 112px;
+      object-fit: cover;
+      object-position: center 35%;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font: 500 44px/1.08 var(--serif);
+      letter-spacing: -0.01em;
+    }
+
+    .role { margin-top: 12px; font-weight: 500; }
+    .where { margin-top: 2px; color: var(--muted); font-size: 15px; }
+
+    .links { margin-top: 28px; display: grid; gap: 6px; font-size: 15px; }
+
+    .print-btn {
+      margin-top: 28px;
+      font: 500 14px var(--sans);
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px 14px;
+      cursor: pointer;
+    }
+    .print-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* content column */
+    section { border-top: 1px solid var(--line); padding-top: 28px; margin-top: 48px; }
+    section:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+
+    h2 { font: 500 28px/1.2 var(--serif); margin-bottom: 20px; }
+    h3 { font-size: 17px; font-weight: 600; line-height: 1.4; }
+
+    p, li { max-width: 68ch; }
+    .lede { font-size: 18px; line-height: 1.7; }
+    .lede + .lede { margin-top: 14px; }
+    .muted { color: var(--muted); }
+
+    .entry + .entry { margin-top: 32px; }
+    .entry .meta { color: var(--muted); font-size: 15px; margin-top: 2px; }
+    .entry p, .entry ul { margin-top: 10px; }
+    .entry li { position: relative; padding-left: 18px; }
+    .entry li + li { margin-top: 6px; }
+    .entry li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .tech { margin-top: 10px; color: var(--muted); font-size: 14px; }
+
+    /* flagship pipeline */
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 0;
+      margin: 18px 0 4px;
+    }
+    .pipeline li {
+      max-width: none;
+      padding: 10px 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.35;
+      margin: 0 0 8px;
+    }
+    .pipeline li + li { margin-top: 0; }
+    .pipeline li:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -17px;
+      top: 50%;
+      width: 16px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .pipeline li { position: relative; margin-right: 18px; padding-left: 14px; }
+    .pipeline li::before { display: none; }
+    .pipeline b { display: block; font-weight: 600; }
+    .pipeline span { color: var(--muted); font-size: 13px; }
+
+    dl.skills { display: grid; grid-template-columns: 170px 1fr; gap: 14px 24px; }
+    dl.skills dt { font-weight: 600; }
+    dl.skills dd { color: var(--muted); }
+
+    .plain li { padding-left: 0; }
+    .plain li::before { display: none; }
+    .plain li + li { margin-top: 12px; }
+
+    footer { margin-top: 56px; color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 880px) {
+      .wrap { grid-template-columns: 1fr; gap: 48px; padding: 48px 22px 72px; }
+      aside { position: static; }
+      h1 { font-size: 38px; }
+      dl.skills { grid-template-columns: 1fr; gap: 2px; }
+      dl.skills dd { margin-bottom: 12px; }
+    }
+
+    @media print {
+      :root { --bg: #fff; --panel: #fff; --ink: #111; --muted: #444; --line: #bbb; --accent: #111; }
+      body { font-size: 10.5pt; line-height: 1.5; }
+      .wrap { display: block; padding: 0; max-width: none; }
+      aside { position: static; margin-bottom: 20pt; }
+      .photo, .print-btn { display: none; }
+      h1 { font-size: 26pt; }
+      .links { display: block; }
+      .links a::after { content: ' (' attr(href) ')'; color: #444; font-size: 9pt; }
+      .links a[href^="mailto:"]::after { content: ''; }
+      section { break-inside: avoid; margin-top: 16pt; padding-top: 12pt; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <aside>
+      <img class="photo" src="static/1000116703.jpg" alt="Portrait of Sagar P Gowda">
+      <h1>Sagar P Gowda</h1>
+      <p class="role">Data &amp; AI Engineer</p>
+      <p class="where">Senior Data Engineer at HP Inc.<br>Bengaluru, India</p>
+      <nav class="links" aria-label="Profiles and contact">
+        <a href="mailto:saggowda777@gmail.com">saggowda777@gmail.com</a>
+        <a href="https://www.linkedin.com/in/sagar-p-gowda-000b4512b/">LinkedIn</a>
+        <a href="https://github.com/sagarpgowda777-cmyk">GitHub</a>
+        <a href="https://medium.com/@sagarpgowda">Medium</a>
+      </nav>
+      <button class="print-btn" type="button" onclick="window.print()">Print or save as PDF</button>
+    </aside>
+
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p class="lede">I’m a data and AI engineer with 5+ years of experience building lakehouse platforms on Databricks and Azure, and the agentic systems that sit on top of them.</p>
+        <p class="lede">I work across the whole stack: governed Delta tables in Unity Catalog, MCP tools that expose them safely, LangGraph agents that reason over them, and RAG pipelines that ground the answers. Before HP, I worked at Accenture.</p>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="entry">
+          <h3>Senior Data Engineer, Data &amp; AI</h3>
+          <p class="meta">HP Inc., Bengaluru</p>
+          <ul>
+            <li>Built Keystone, a governed natural-language data assistant: a React and TypeScript front end over a FastAPI service that routes questions to Databricks Genie spaces and adds Atlan lineage and glossary context to the answers.</li>
+            <li>Designed the Lakebase Postgres tables behind Keystone (space registry, sessions, chat history, routing skills, usage) and synced the registry automatically from Atlan AI application assets.</li>
+            <li>Built an agentic supply chain investigation platform on Databricks, from an ontology in Delta tables to a LangGraph multi-agent supervisor.</li>
+            <li>Wrote a custom FastMCP server to work around gaps in the managed Genie MCP: stateless calls, no control over <code>conversation_id</code>, and complex polling.</li>
+            <li>Built a self-service ingestion orchestrator with approval workflows, and a data discovery system that queries Unity Catalog AI summaries.</li>
+            <li>Resolved Databricks SQL concurrency issues with SQL Scripting, using stored procedures, retry loops and exception handlers.</li>
+            <li>Designed a GitHub Copilot skills framework (SKILL.md files, prompt files, hooks and repo-wide instructions) for test generation and DDL/DML workflows with guardrails.</li>
+          </ul>
+          <p class="tech">Databricks, Delta Lake, Unity Catalog, Delta Live Tables, PySpark, LangGraph, FastMCP, Azure</p>
+        </div>
+      </section>
+
+      <section id="work">
+        <h2>Selected work</h2>
+
+        <div class="entry">
+          <h3>Keystone: Databricks and Atlan data assistant</h3>
+          <p class="meta">HP Inc., full stack: React, FastAPI, Databricks</p>
+          <ol class="pipeline" aria-label="Keystone architecture, left to right">
+            <li><b>React</b><span>TypeScript UI</span></li>
+            <li><b>FastAPI</b><span>Databricks App</span></li>
+            <li><b>LangGraph</b><span>Intent and routing</span></li>
+            <li><b>Genie + Atlan</b><span>Answers and lineage</span></li>
+            <li><b>Lakebase</b><span>Postgres state</span></li>
+          </ol>
+          <p>Keystone lets people ask questions about governed data in plain language. A LangGraph orchestrator works out the intent, picks the right Genie spaces, queries each through its Genie MCP server as the signed-in user, and merges the answers, with charts for query results.</p>
+          <ul>
+            <li><b>Atlan integration.</b> Discovers AI application assets to keep the Genie space registry current, and answers lineage, glossary, data product and AI application questions from the catalog, with upstream and downstream lineage cards.</li>
+            <li><b>Genie space builder.</b> Lists the tables a user can see, ranks them using Atlan descriptions, owners and certification status, and creates the space as that user after a signed confirmation step.</li>
+            <li><b>Routing skills.</b> Users save question-to-space routes, private or shared, so repeat questions skip the LLM routing calls.</li>
+            <li><b>Data engineering.</b> Lakebase Postgres tables for the registry, sessions, chat history and skills. MLflow traces feed a per-user usage and estimated cost view with Excel export.</li>
+            <li><b>Front end.</b> React and TypeScript, streaming each reasoning step into the chat as it runs, with Recharts for query results.</li>
+          </ul>
+          <p class="tech">React, TypeScript, FastAPI, LangGraph, Databricks Genie, Atlan, Lakebase Postgres, MLflow</p>
+        </div>
+
+        <div class="entry">
+          <h3>Agentic Supply Chain Investigation Platform</h3>
+          <p class="meta">Hackathon project</p>
+          <ol class="pipeline" aria-label="Platform architecture, left to right">
+            <li><b>Delta Lake</b><span>Unity Catalog</span></li>
+            <li><b>Ontology</b><span>Nodes and edges</span></li>
+            <li><b>FastMCP</b><span>Tools</span></li>
+            <li><b>LangGraph</b><span>Supervisor agent</span></li>
+            <li><b>Streamlit / Gradio</b><span>Frontend</span></li>
+          </ol>
+          <p>Investigators ask questions in plain language. A supervisor agent routes each one to MCP tools that traverse a graph of suppliers, parts and events stored as ordinary Delta tables, so access stays governed by Unity Catalog.</p>
+        </div>
+
+        <div class="entry">
+          <h3>Custom FastMCP server for Databricks Genie</h3>
+          <p>A stateful MCP layer over the Genie Conversation API that keeps conversations, controls <code>conversation_id</code> and handles polling itself instead of leaving it to the LLM. Documented in a two-part article series.</p>
+        </div>
+
+        <div class="entry">
+          <h3>Local RAG pipeline</h3>
+          <p>A fully local retrieval stack on a Windows machine with a GTX 1650: llama.cpp (CUDA build), nomic-embed-text and FAISS, with an n8n workflow for chatting over documents.</p>
+        </div>
+
+        <div class="entry">
+          <h3>PR auto-review bot</h3>
+          <p>A GitHub Actions workflow that calls the Claude API in a ReAct tool-use loop to review pull requests.</p>
+        </div>
+      </section>
+
+      <section id="writing">
+        <h2>Writing and research</h2>
+        <ul class="plain">
+          <li><b><a href="https://community.databricks.com/t5/community-articles/building-custom-agents-on-databricks-langgraph-atlan-grounded/td-p/167658">Building Custom Agents on Databricks: LangGraph, Atlan-Grounded Routing, and Per-Run Cost with MLflow</a></b><br><span class="muted">Databricks Community Articles, September 2026. A single ReAct agent that routes questions across Genie spaces using Atlan metadata, with per-run token cost tracked in MLflow.</span></li>
+          <li><b><a href="https://zenodo.org/records/18839861">Predictive Optimization of Delta Tables on Azure Data Lake Storage</a></b><br><span class="muted">Preprint on Zenodo, March 2026. An automated approach to file compaction and query performance on Unity Catalog tables, reporting roughly 30% faster queries than manual optimization.</span></li>
+          <li><b>MCP on Databricks</b><br><span class="muted">A two-part series on <a href="https://medium.com/@sagarpgowda">Medium</a>, featured in Databricks Community Articles.</span></li>
+        </ul>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <dl class="skills">
+          <dt>Data platform</dt>
+          <dd>Databricks, Delta Lake, Unity Catalog, Delta Live Tables, PySpark, Spark SQL, Lakebase Postgres, Atlan, Azure Data Factory, ADLS Gen2, Synapse</dd>
+          <dt>AI and agents</dt>
+          <dd>LangGraph, FastMCP and MCP, Genie API, Agent Bricks, RAG pipelines, multi-agent orchestration, MLflow tracing</dd>
+          <dt>Applications</dt>
+          <dd>React, TypeScript, Node.js tooling, FastAPI, REST, server-sent events, Recharts</dd>
+          <dt>Tooling</dt>
+          <dd>Python, SQL, Azure Key Vault, GitHub Actions, GitHub Copilot customization</dd>
+        </dl>
+      </section>
+
+      <section id="certifications">
+        <h2>Certifications</h2>
+        <ul class="plain">
+          <li><b>Databricks Certified Data Engineer Associate</b><br><span class="muted">Databricks, issued April 2025, valid until April 2027. <a href="https://credentials.databricks.com/e5422287-e6d7-4983-a259-863b4a857030">Verify</a></span></li>
+          <li><b>Databricks Certified Generative AI Engineer Associate</b><br><span class="muted">Databricks</span></li>
+          <li><b>Microsoft Certified: Azure AI Fundamentals</b><br><span class="muted">Microsoft, June 2022. <a href="https://www.credly.com/badges/57fb4e30-b920-4ebb-8a95-898e9cf1ad30/linked_in_profile">Verify</a></span></li>
+          <li><b>Microsoft Certified: Azure Data Fundamentals</b><br><span class="muted">Microsoft, October 2022. <a href="https://www.credly.com/badges/fa382062-3db4-46c6-b7e0-2e92d098828d/linked_in_profile">Verify</a></span></li>
+          <li><b>Microsoft Certified: Azure Fundamentals</b><br><span class="muted">Microsoft, November 2021. <a href="https://www.credly.com/badges/283f9015-7a40-42f1-8457-278dda22b8dc/linked_in_profile">Verify</a></span></li>
+        </ul>
+        <h3 style="margin-top:28px">Courses</h3>
+        <ul class="plain" style="margin-top:12px">
+          <li><b>Vector Database Fundamentals to Production</b><br><span class="muted">Udemy. <a href="http://ude.my/UC-71a5f967-de84-4467-b30b-a391616d0161">Verify</a></span></li>
+          <li><b>Python for Data Science and Machine Learning Bootcamp</b><br><span class="muted">Udemy, August 2022</span></li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>The quickest way to reach me is <a href="mailto:saggowda777@gmail.com">email</a>. I’m also on <a href="https://www.linkedin.com/in/sagar-p-gowda-000b4512b/">LinkedIn</a>.</p>
+      </section>
+
+      <footer>© 2026 Sagar P Gowda</footer>
+    </main>
+  </div>
+</body>
+
+</html>
